@@ -20,7 +20,7 @@ public abstract class LonelyTweetModel {
 		super();
 		this.text = text;
 		this.timestamp = timestamp;
-	}
+	}	
 	
 	public void setText(String text) {
 		this.text = text;
@@ -37,7 +37,11 @@ public abstract class LonelyTweetModel {
 			return false;
 		}
 		
-		LonelyTweetModel otherTweet = (LonelyTweetModel) other;
-		return timestamp.equals(otherTweet.timestamp) && text.equals(otherTweet.text);
+		if(other.getClass().equals(this.getClass())) {
+			LonelyTweetModel otherTweet = (LonelyTweetModel) other;
+			return timestamp.equals(otherTweet.timestamp) && text.equals(otherTweet.text);
+		}
+		return false;
 	}
+
 }
