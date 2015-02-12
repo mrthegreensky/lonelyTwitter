@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 public class LonelyTwitterActivity extends Activity {
@@ -49,6 +50,11 @@ public class LonelyTwitterActivity extends Activity {
 		});
 	}
 
+	public ListAdapter getAdapter() {
+		return this.adapter;
+	}
+	
+	
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
